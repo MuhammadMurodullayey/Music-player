@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uz.gita.serviceapp.presentation.ui.screens.PlayScreen">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backImage"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/music_player"
+
+        android:scaleType="centerCrop"
+        android:layout_margin="8dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:padding="8dp"
+        android:layout_margin="10dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:src="@drawable/ic_back_ios"
+        app:layout_constraintTop_toTopOf="@id/backImage"
+        app:layout_constraintStart_toStartOf="@id/backImage"
+        android:focusable="true" />
+
+
+   <androidx.cardview.widget.CardView
+       android:id="@+id/circle_image"
+       android:layout_width="260dp"
+       android:layout_height="260dp"
+       app:cardCornerRadius="100dp"
+       app:layout_constraintBottom_toBottomOf="@id/backImage"
+       app:layout_constraintTop_toBottomOf="@id/backImage"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       >
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/image"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:src="@drawable/image"
+           android:scaleType="centerCrop"/>
+   </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/author_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/circle_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="Shahob Mozaffari "
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="28dp"/>
+    <TextView
+        android:id="@+id/music_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/author_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="Shahob Mozaffari "
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp"/>
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/pause_card"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="40dp"
+        android:thumb="@drawable/seekbar_circle"
+        android:maxHeight="4dp"
+        android:minHeight="4dp"
+        android:progressDrawable="@drawable/seekbar_line"
+        android:layout_marginHorizontal="20dp"
+        />
+    <androidx.cardview.widget.CardView
+        android:padding="8dp"
+        android:elevation="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/pause_card"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="80dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:backgroundTint="#F34848"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pause_play_btn"
+            android:padding="14dp"
+            android:background="?android:selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_pause"
+            android:tint="@color/white"
+            />
+
+    </androidx.cardview.widget.CardView>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:padding="8dp"
+        android:elevation="8dp"
+        android:id="@+id/btn_next"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="?selectableItemBackgroundBorderless"
+        app:layout_constraintStart_toEndOf="@id/pause_card"
+        app:layout_constraintBottom_toBottomOf="@id/pause_card"
+        app:layout_constraintTop_toTopOf="@id/pause_card"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_skip_next"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:padding="8dp"
+        android:elevation="8dp"
+        android:id="@+id/btn_prew"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:background="?selectableItemBackgroundBorderless"
+        app:layout_constraintEnd_toStartOf="@id/pause_card"
+        app:layout_constraintBottom_toBottomOf="@id/pause_card"
+        app:layout_constraintTop_toTopOf="@id/pause_card"
+        android:layout_marginEnd="20dp"
+
+        android:src="@drawable/ic_skip_previous"/>
+    <TextView
+        android:id="@+id/full_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/seekbar"
+        app:layout_constraintBottom_toTopOf="@id/seekbar"
+        android:text="02:34"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/current_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/seekbar"
+        app:layout_constraintBottom_toTopOf="@id/seekbar"
+        android:text="02:34"
+        android:textColor="@color/black"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav.xml"
+    app:startDestination="@id/spashScreen">
+
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.gita.serviceapp.presentation.ui.screens.HomeScreen"
+        android:label="screen_home"
+        tools:layout="@layout/screen_home" >
+        <action
+            android:id="@+id/action_homeScreen_to_playScreen"
+            app:destination="@id/playScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/playScreen"
+        android:name="uz.gita.serviceapp.presentation.ui.screens.PlayScreen"
+        android:label="play_screen"
+        tools:layout="@layout/play_screen" />
+    <fragment
+        android:id="@+id/spashScreen"
+        android:name="uz.gita.serviceapp.presentation.ui.screens.SpashScreen"
+        android:label="screen_splash"
+        tools:layout="@layout/screen_splash" >
+        <action
+            android:id="@+id/action_spashScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/spashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
